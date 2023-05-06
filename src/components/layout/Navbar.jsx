@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import devlogo from "../../assets/svg/devlogo.svg";
 import { NavLink } from "react-router-dom";
 import { MobileContext } from "../../context/mobile-context";
-import MobileMenu from "../mobile/mobileMenu";
+import MobileMenu from "../mobile/MobileMenu";
 import { motion } from "framer-motion";
 
 const menuListVariant = {
