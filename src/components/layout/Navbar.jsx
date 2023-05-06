@@ -23,7 +23,7 @@ function FullMenu() {
       variants={menuListVariant}
       initial="initial"
       animate="animate"
-      className="flex flex-row text-primary font-bold gap-x-8 text-2xl"
+      className="flex flex-row text-primary font-bold gap-x-8 text-xl"
     >
       <motion.div variants={menuListVariant}>
         <NavLink
@@ -67,7 +67,7 @@ function Navbar() {
   const menu = mobileCtx.isInMobile ? <MobileMenu /> : <FullMenu />;
 
   return (
-    <div className="sticky flex flex-row items-center justify-between mx-8 py-4">
+    <motion.div className="sticky flex flex-row items-center justify-between px-8 lg:px-32 py-4 ease-in-out duration-100">
       <NavLink to="/" className="flex flex-row items-center">
         <motion.img
           initial={{ opacity: 0, x: "-100vw" }}
@@ -76,20 +76,22 @@ function Navbar() {
             x: 0,
             transition: { type: "tween", duration: 0.8 },
           }}
-          className="h-10"
+          className="h-8"
           src={devlogo}
           alt="A coding logo"
         />
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 0.8, 0.4, 1], transition: { delay: 1 } }}
-          className="text-primary text-3xl px-2 font-bold invisible md:visible"
-        >
-          Shand.dev
-        </motion.span>
+        {mobileCtx.isInMobile ? null : (
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: [0, 0.8, 0.4, 1], transition: { delay: 1 } }}
+            className="text-primary text-2xl px-2 font-bold"
+          >
+            Shand.dev
+          </motion.span>
+        )}
       </NavLink>
       {menu}
-    </div>
+    </motion.div>
   );
 }
 
