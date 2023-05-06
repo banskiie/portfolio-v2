@@ -25,34 +25,38 @@ function FullMenu() {
       animate="animate"
       className="flex flex-row text-primary font-bold gap-x-8 text-2xl"
     >
-      <motion.NavLink
-        variants={menuListVariant}
-        className="hover:text-secondary p-1 rounded-md ease-linear duration-100 cursor-pointer"
-        to="/"
-      >
-        Home
-      </motion.NavLink>
-      <motion.NavLink
-        variants={menuListVariant}
-        className="hover:text-secondary p-1 rounded-md ease-linear duration-100 cursor-pointer"
-        to="/about"
-      >
-        About
-      </motion.NavLink>
-      <motion.NavLink
-        variants={menuListVariant}
-        className="hover:text-secondary p-1 rounded-md ease-linear duration-100 cursor-pointer"
-        to="/projects"
-      >
-        Projects
-      </motion.NavLink>
-      <motion.NavLink
-        variants={menuListVariant}
-        className="hover:text-secondary p-1 rounded-md ease-linear duration-100 cursor-pointer"
-        to="/contact"
-      >
-        Contact
-      </motion.NavLink>
+      <motion.div variants={menuListVariant}>
+        <NavLink
+          className="hover:text-secondary p-1 rounded-md ease-linear duration-100 cursor-pointer"
+          to="/"
+        >
+          Home
+        </NavLink>
+      </motion.div>
+      <motion.div variants={menuListVariant}>
+        <NavLink
+          className="hover:text-secondary p-1 rounded-md ease-linear duration-100 cursor-pointer"
+          to="/about"
+        >
+          About
+        </NavLink>
+      </motion.div>
+      <motion.div variants={menuListVariant}>
+        <NavLink
+          className="hover:text-secondary p-1 rounded-md ease-linear duration-100 cursor-pointer"
+          to="/projects"
+        >
+          Projects
+        </NavLink>
+      </motion.div>
+      <motion.div variants={menuListVariant}>
+        <NavLink
+          className="hover:text-secondary p-1 rounded-md ease-linear duration-100 cursor-pointer"
+          to="/contact"
+        >
+          Contact
+        </NavLink>
+      </motion.div>
     </motion.div>
   );
 }
@@ -63,7 +67,7 @@ function Navbar() {
   const menu = mobileCtx.isInMobile ? <MobileMenu /> : <FullMenu />;
 
   return (
-    <div className="sticky flex flex-row items-center justify-between mx-12 py-4">
+    <div className="sticky flex flex-row items-center justify-between mx-8 py-4">
       <NavLink to="/" className="flex flex-row items-center">
         <motion.img
           initial={{ opacity: 0, x: "-100vw" }}
@@ -79,7 +83,7 @@ function Navbar() {
         <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: [0, 0.8, 0.4, 1], transition: { delay: 1 } }}
-          className="text-primary text-3xl px-2 font-bold"
+          className="text-primary text-3xl px-2 font-bold invisible sm:visible"
         >
           Shand.dev
         </motion.span>
