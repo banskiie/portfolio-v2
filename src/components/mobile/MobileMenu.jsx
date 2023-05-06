@@ -28,10 +28,17 @@ function MobileMenu() {
       <AnimatePresence>
         {openMenu && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: [0, 1] }}
-            exit={{ opacity: 0 }}
-            className="absolute flex flex-col items-left justify-center text-primary py-1 gap-y-1"
+            initial={{ y: "-20vh" }}
+            animate={{
+              opacity: [0, 0, 0, 0, 1],
+              y: 0,
+            }}
+            exit={{
+              opacity: [1, 0, 0, 0, 0],
+              y: "-20vh",
+            }}
+            transition={{ duration: 0.2 }}
+            className="absolute  bg-accent bg-opacity-60 flex flex-col items-left justify-center text-primary py-1 gap-y-1 rounded-md"
           >
             <NavLink to="/">
               <img
