@@ -83,7 +83,7 @@ function Navbar() {
         <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: [0, 0.8, 0.4, 1], transition: { delay: 1 } }}
-          className="text-primary text-3xl px-2 font-bold invisible sm:visible"
+          className="text-primary text-3xl px-2 font-bold invisible md:visible"
         >
           Shand.dev
         </motion.span>
