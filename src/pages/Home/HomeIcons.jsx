@@ -33,25 +33,25 @@ function HomeIcons() {
         <img className="h-8 md:h-14" src={js} alt="Javascript" />
       </motion.div>
       <motion.div variants={iconsVariant}>
-        <img className="h-6 md:h-10" src={reactjs} alt="ReactJS" />
-      </motion.div>
-      <motion.div variants={iconsVariant}>
-        <img className="h-6 md:h-10" src={firebase} alt="Firebase" />
-      </motion.div>
-      <motion.div variants={iconsVariant}>
-        <img className="h-5 md:h-8" src={python} alt="Python" />
-      </motion.div>
-      <motion.div variants={iconsVariant}>
-        <img className="h-6 md:h-14" src={php} alt="PHP" />
-      </motion.div>
-      <motion.div variants={iconsVariant}>
         <img className="h-5 md:h-8" src={html} alt="HTML" />
       </motion.div>
       <motion.div variants={iconsVariant}>
         <img className="h-5 md:h-8" src={css} alt="CSS" />
       </motion.div>
       <motion.div variants={iconsVariant}>
+        <img className="h-6 md:h-10" src={reactjs} alt="ReactJS" />
+      </motion.div>
+      <motion.div variants={iconsVariant}>
+        <img className="h-6 md:h-14" src={php} alt="PHP" />
+      </motion.div>
+      <motion.div variants={iconsVariant}>
         <img className="h-5 md:h-8" src={mysql} alt="MySQL" />
+      </motion.div>
+      <motion.div variants={iconsVariant}>
+        <img className="h-6 md:h-10" src={firebase} alt="Firebase" />
+      </motion.div>
+      <motion.div variants={iconsVariant}>
+        <img className="h-5 md:h-8" src={python} alt="Python" />
       </motion.div>
     </motion.div>
   );

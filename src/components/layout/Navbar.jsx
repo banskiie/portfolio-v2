@@ -38,7 +38,7 @@ function FullMenu() {
           className="hover:text-secondary p-1 rounded-md ease-linear duration-100 cursor-pointer"
           to="/about"
         >
-          About
+          Profile
         </NavLink>
       </motion.div>
       <motion.div variants={menuListVariant}>
@@ -46,7 +46,7 @@ function FullMenu() {
           className="hover:text-secondary p-1 rounded-md ease-linear duration-100 cursor-pointer"
           to="/projects"
         >
-          Projects
+          Journal
         </NavLink>
       </motion.div>
       <motion.div variants={menuListVariant}>
@@ -54,7 +54,7 @@ function FullMenu() {
           className="hover:text-secondary p-1 rounded-md ease-linear duration-100 cursor-pointer"
           to="/contact"
         >
-          Contact
+          Reflection
         </NavLink>
       </motion.div>
     </motion.div>

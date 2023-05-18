@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import hamburgerIcon from "../../assets/svg/UI/hamburger-icon.svg";
-import home from "../../assets/svg/UI/home.svg";
-import aboutMe from "../../assets/svg/UI/about-me.svg";
-import projects from "../../assets/svg/UI/projects.svg";
-import contact from "../../assets/svg/UI/contact.svg";
 import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import IconHamburgerMenu from "../../assets/svg/UI/IconHamburgerMenu";
+import IconHome from "../../assets/svg/UI/IconHome";
+import IconProfile from "../../assets/svg/UI/IconProfile";
+import IconJournal from "../../assets/svg/UI/IconJournal";
+import IconMirror from "../../assets/svg/UI/IconMirror";
+import { Tooltip as ReactTooltip } from "react-tooltip";
 
 function MobileMenu() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -19,11 +20,7 @@ function MobileMenu() {
           setOpenMenu((prevState) => !prevState);
         }}
       >
-        <img
-          className="w-10 hover:bg-neutral rounded-md p-1 ease-linear duration-100"
-          src={hamburgerIcon}
-          alt="Mobile Menu Icon"
-        />
+        <IconHamburgerMenu />
       </motion.button>
       <AnimatePresence>
         {openMenu && (
@@ -40,29 +37,37 @@ function MobileMenu() {
             transition={{ duration: 0.2 }}
             className="absolute  bg-accent bg-opacity-60 flex flex-col items-left justify-center text-primary py-1 gap-y-1 rounded-md"
           >
-            <NavLink to="/">
-              <img
-                className="w-10 hover:bg-neutral rounded-md p-1 ease-linear duration-100"
-                src={home}
-              />
+            <NavLink
+              to="/"
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content="Home"
+            >
+              <ReactTooltip id="my-tooltip" />
+              <IconHome />
             </NavLink>
-            <NavLink to="/about">
-              <img
-                className="w-10 hover:bg-neutral rounded-md p-1 ease-linear duration-100"
-                src={aboutMe}
-              />
+            <NavLink
+              to="/profile"
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content="Profile"
+            >
+              <ReactTooltip id="my-tooltip" />
+              <IconProfile />
             </NavLink>
-            <NavLink to="/projects">
-              <img
-                className="w-10 hover:bg-neutral rounded-md p-1 ease-linear duration-100"
-                src={projects}
-              />
+            <NavLink
+              to="/journal"
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content="Journal"
+            >
+              <ReactTooltip id="my-tooltip" />
+              <IconJournal />
             </NavLink>
-            <NavLink to="/contact">
-              <img
-                className="w-10 hover:bg-neutral rounded-md p-1 ease-linear duration-100"
-                src={contact}
-              />
+            <NavLink
+              to="/reflection"
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content="Reflection"
+            >
+              <ReactTooltip id="my-tooltip" />
+              <IconMirror />
             </NavLink>
           </motion.div>
         )}
