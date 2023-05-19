@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-// import hamburgerIcon from "../../assets/svg/UI/hamburger-icon.svg";
-// import home from "../../assets/svg/UI/home.svg";
-// import aboutMe from "../../assets/svg/UI/about-me.svg";
-// import projects from "../../assets/svg/UI/projects.svg";
-// import contact from "../../assets/svg/UI/contact.svg";
+
 import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import IconMenu from "../../assets/svg/IconMenu";
