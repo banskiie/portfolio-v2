@@ -1,68 +1,56 @@
 import React, { useState } from "react";
-import hamburgerIcon from "../../assets/svg/UI/hamburger-icon.svg";
-import home from "../../assets/svg/UI/home.svg";
-import aboutMe from "../../assets/svg/UI/about-me.svg";
-import projects from "../../assets/svg/UI/projects.svg";
-import contact from "../../assets/svg/UI/contact.svg";
+// import hamburgerIcon from "../../assets/svg/UI/hamburger-icon.svg";
+// import home from "../../assets/svg/UI/home.svg";
+// import aboutMe from "../../assets/svg/UI/about-me.svg";
+// import projects from "../../assets/svg/UI/projects.svg";
+// import contact from "../../assets/svg/UI/contact.svg";
 import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import IconMenu from "../../assets/svg/IconMenu";
+import IconBxsHome from "../../assets/svg/IconBxsHome";
+import IconUser from "../../assets/svg/IconUser";
+import IconBookOpen from "../../assets/svg/IconBookOpen";
+import IconPencil from "../../assets/svg/IconPencil";
 
 function MobileMenu() {
   const [openMenu, setOpenMenu] = useState(false);
   return (
-    <div>
+    <div className="flex flex-row-reverse">
       <motion.button
         initial={{ x: "100vw" }}
         animate={{ x: 0, transition: { type: "tween", duration: 0.8 } }}
-        className="flex flex-row items-center"
         onClick={() => {
           setOpenMenu((prevState) => !prevState);
         }}
       >
-        <img
-          className="w-10 hover:bg-neutral rounded-md p-1 ease-linear duration-100"
-          src={hamburgerIcon}
-          alt="Mobile Menu Icon"
-        />
+        <IconMenu className="fill-white" />
       </motion.button>
       <AnimatePresence>
         {openMenu && (
           <motion.div
-            initial={{ y: "-20vh" }}
+            initial={{ x: "20vw" }}
             animate={{
               opacity: [0, 0, 0, 0, 1],
-              y: 0,
+              x: 0,
             }}
             exit={{
               opacity: [1, 0, 0, 0, 0],
-              y: "-20vh",
+              x: "20vw",
             }}
             transition={{ duration: 0.2 }}
-            className="absolute  bg-accent bg-opacity-60 flex flex-col items-left justify-center text-primary py-1 gap-y-1 rounded-md"
+            className=" bg-primary flex flex-row items-center justify-center rounded-md text-white gap-x-2 px-2"
           >
             <NavLink to="/">
-              <img
-                className="w-10 hover:bg-neutral rounded-md p-1 ease-linear duration-100"
-                src={home}
-              />
+              <IconBxsHome />
             </NavLink>
-            <NavLink to="/about">
-              <img
-                className="w-10 hover:bg-neutral rounded-md p-1 ease-linear duration-100"
-                src={aboutMe}
-              />
+            <NavLink to="/profile">
+              <IconUser />
             </NavLink>
-            <NavLink to="/projects">
-              <img
-                className="w-10 hover:bg-neutral rounded-md p-1 ease-linear duration-100"
-                src={projects}
-              />
+            <NavLink to="/journal">
+              <IconBookOpen />
             </NavLink>
-            <NavLink to="/contact">
-              <img
-                className="w-10 hover:bg-neutral rounded-md p-1 ease-linear duration-100"
-                src={contact}
-              />
+            <NavLink to="/reflection">
+              <IconPencil />
             </NavLink>
           </motion.div>
         )}

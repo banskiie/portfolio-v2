@@ -1,8 +1,8 @@
 import React from "react";
-import Home from "../pages/Home";
-import About from "../pages/About";
-import Projects from "../pages/Projects";
-import Contact from "../pages/Contact";
+import Home from "../pages/Home/Home";
+import Profile from "../pages/Profile/Profile";
+import Journal from "../pages/Journal/Journal";
+import Reflection from "../pages/Reflection/Reflection";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -10,9 +10,9 @@ function AppRoutes() {
   return (
     <Routes>
       <Route index path="/" Component={Home} />
-      <Route path="/about" Component={About} />
-      <Route path="/projects" Component={Projects} />
-      <Route path="/contact" Component={Contact} />
+      <Route path="/profile" Component={Profile} />
+      <Route path="/journal" Component={Journal} />
+      <Route path="/Reflection" Component={Reflection} />
     </Routes>
   );
 }
